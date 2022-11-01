@@ -208,7 +208,8 @@ class MemberRepositoryTest {
         em.clear();
 
         //when
-        List<Member> members = memberRepository.findEntityGraphByUsername("member1");
+//        List<Member> members = memberRepository.findEntityGraphByUsername("member1");
+        List<Member> members = memberRepository.findNamedEntityGraphByUsername("member1");
 
         //then
         for (Member member : members) {

@@ -64,4 +64,8 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
     //메서드 이름(find...By)으로 쿼리 생성 + 엔티티 그래프
     @EntityGraph(attributePaths = {"team"})
     List<Member> findEntityGraphByUsername(String username);
+
+    //NamedEntityGraph
+    @EntityGraph("Member.all")
+    List<Member> findNamedEntityGraphByUsername(String username);
 }
